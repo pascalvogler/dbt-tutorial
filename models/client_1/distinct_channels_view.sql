@@ -1,0 +1,1 @@
+SELECT DISTINCT paid_platform FROM {{ ref('base_data') }}
