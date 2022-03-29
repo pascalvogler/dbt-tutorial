@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: base_data
+    description: Some random grouped data with vendor metrics
+    columns:
+      - name: date
+        description: Date dimension
+        tests:
+          - not_null
+      - name: paid_platform
+        description: Overall platform dimension
+        tests:
+          - not_null
+      - name: cost
+        description: Cost metric
+        tests:
+          - not_null
+      - name: impressions
+        description: Impressions metric
+        tests:
+          - not_null
+      - name: sessions
+        description: Sessions metric
+        tests:
+          - not_null
+
+  - name: distinct_channels_view
+    description: Some completely babedipupi view based on the first model
+    columns:
+      - name: paid_platform
+        description: Overall platform dimension
+        tests:
+          - unique
+          - not_null
